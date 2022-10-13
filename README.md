@@ -42,7 +42,7 @@ Tautan aplikasi Heroku: [LINK](https://nutrirobo.herokuapp.com/)
 
 ## Role Pengguna
 
-`Pengguna : Mengakses dan menggunakan modul yang tersedia
-`Admin`   : Berperan sebagai admin dengan melakukan verifikasi user, dan menjadi pengawas kegiatan dengan cara berinteraksi dengan user seperti pemberian saran maupun post artikel di modul blog <br>
+`Pengguna`  : Mengakses dan menggunakan modul yang tersedia <br>
+`Admin`     : Berperan sebagai admin dengan melakukan verifikasi user, dan menjadi pengawas kegiatan dengan cara berinteraksi dengan user seperti pemberian saran maupun post artikel di modul blog <br>
 <br>
-Terdapat roles `instruktur` pada user pengguna yang dibedakan dengan adanya simbol terverifikasi di sebelah nama pengguna dan memiliki akses untuk post sebuah artikel dalam modul blog.
+Terdapat roles `instruktur` pada user pengguna yang dibedakan dengan adanya simbol terverifikasi di sebelah nama pengguna dan memiliki akses untuk post sebuah artikel dalam modul blog. <br>
