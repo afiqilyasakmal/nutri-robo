@@ -2,7 +2,7 @@
 
 Repositori ini dibuat untuk memenuhi tugas Proyek Tengah Semester (PTS) mata kuliah Pemrograman Berbasis Platform yang diselenggarakan Fakultas Ilmu Komputer, Universitas Indonesia semester ganjil 2022/2023 kelompok A-08.
 
-Tautan aplikasi Heroku: [LINK](https://nutrirobo.herokuapp.com/)
+Tautan aplikasi Heroku: [LINK APLIKASI](https://nutrirobo.herokuapp.com/)
 
 ## Anggota Kelompok
 
@@ -24,7 +24,7 @@ Tautan aplikasi Heroku: [LINK](https://nutrirobo.herokuapp.com/)
 
 2. Profile
 + Data diri
-+ Implementasi kebutuhan kalori, gizi, air, olahraga, dan waktu tidur untuk setiap pengguna berdasarkan data pengguna (target yg harus mereka capai gt)
++ Implementasi kebutuhan kalori, gizi, air, olahraga, dan waktu tidur untuk setiap pengguna berdasarkan data pengguna (seperti target yang harus dicapai oleh pengguna)
 + Logout
 
 3. Tracker
