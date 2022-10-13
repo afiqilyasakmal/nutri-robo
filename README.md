@@ -2,11 +2,7 @@
 
 Repositori ini dibuat untuk memenuhi tugas Proyek Tengah Semester (PTS) mata kuliah Pemrograman Berbasis Platform yang diselenggarakan Fakultas Ilmu Komputer, Universitas Indonesia Semester Ganjil 2022/2023 Kelompok A-08.
 
-<<<<<<< HEAD
-Tautan aplikasi Heroku: [LINK APLIKASI](https://nutrirobo.herokuapp.com/)
-=======
 Tautan aplikasi Heroku: https://nutrirobo.herokuapp.com/
->>>>>>> 05c31c3 (Tahap 1 Tugas 6 PBP)
 
 ## Anggota Kelompok
 
@@ -35,35 +31,6 @@ Oleh karena itu, agar tubuh tetap sehat dan terhindar dari berbagai penyakit kro
 ## Modul
 
 1. Home (landing page)
-<<<<<<< HEAD
-+ Selamat datang dan latar belakang aplikasi
-+ Navbar menuju ke modul-modul lainnya
-
-2. Profile
-+ Data diri
-+ Implementasi kebutuhan kalori, gizi, air, olahraga, dan waktu tidur untuk setiap pengguna berdasarkan data pengguna (seperti target yang harus dicapai oleh pengguna)
-+ Logout
-
-3. Tracker
-+ Tracker kayak tiap hari mereka ngisi makan apa, minum brp banyak, olahraga apa ngga, tidur jam berapa ke jam berapa
-+ Feedback kyk mereka kurang minum vitamin kah, kurang minum air, kurang olahraga, atau kurang tidur
-
-4. Blog
-+ Widget buat daily motivation
-+ Tips" kesehatan yang bisa dikomentarin user dan cuma bisa dipost sama admin
-+ Berita terbaru terkait kesehatan
-
-5. FAQ
-+ Jawaban dari pertanyaan yang sering ditanyakan oleh user
-
-
-## Role Pengguna
-
-`Pengguna`  : Mengakses dan menggunakan modul yang tersedia <br>
-`Admin`     : Berperan sebagai admin dengan melakukan verifikasi user, dan menjadi pengawas kegiatan dengan cara berinteraksi dengan user seperti pemberian saran maupun post artikel di modul blog <br>
-<br>
-Terdapat roles `instruktur` pada user pengguna yang dibedakan dengan adanya simbol terverifikasi di sebelah nama pengguna dan memiliki akses untuk post sebuah artikel dalam modul blog. <br>
-=======
 - Sambutan bagi pengguna pada halaman web nutri-robo
 - Latar belakang dibuatnya nutri-robo secara singkat 
 - Navigation bar ke menu-menu lain yang tersedia pada halaman web nutri-robo
@@ -93,4 +60,3 @@ Terdapat roles `instruktur` pada user pengguna yang dibedakan dengan adanya simb
 
 2. Admin 
 - Melakukan authorization dan authentication pengguna, menjadi pengawas kegiatan pada halaman web nutri-robo, melakukan interaksi dengan pengguna seperti memberikan feedback dan mengunggah artikel dimodul blog.
->>>>>>> 05c31c3 (Tahap 1 Tugas 6 PBP)
