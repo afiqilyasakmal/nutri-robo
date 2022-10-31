@@ -23,7 +23,7 @@ def show_afterLoginlandingPage(request):
         'last_login': request.COOKIES['last_login'],
         }
 
-    return render(request, 'afterLoginlandingPage.html', context)
+    return render(request, 'afterLoginLandingPage.html', context)
 
 def register(request):
     form = UserCreationForm()
