@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(219, 232, 246);
+    min-height: 100%;
 }
 
 button {
