@@ -4,19 +4,31 @@
 <title>FAQ</title>
 
 <!-- {% load static %} -->
-<script src="/static/partFAQ.js"></script>
+<script src="/static/mainPageFAQ.js"></script>
+
 {% endblock meta %}
 
 {% block content %}
-<!-- menampilkan daftar-daftar FAQ -->
-<div class="container">question2
+
+
+
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>FAQ</h1>
             <p>Here you can find answers to the most frequently asked questions.</p>
+
+            <!-- menampilkan search bar -->
+            <input type="text" id="search_bar" placeholder="Search for questions..">
+            <button type="button" class="btn btn-primary" id = "submit_search" >Search</button>
+
+            <!-- meanmpilkan history search -->
+            <p><a href="{% url 'partFAQ:showFAQSearchHistory' %}">Lihat History Pencarian</a></p>
+
+            <!-- menampilkan daftar-daftar FAQ -->
             <div class="row">
                 <div class="col-md-12" id="show_question">
-                    <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <!-- <div class="panel-group" id="accordion" role="tablist>" aria-multiselectable="true">
                         <div class="panel panel-default"> -->
                             
                             <!-- <div class="panel-heading" role="tab" id="heading{{faq.id}}">

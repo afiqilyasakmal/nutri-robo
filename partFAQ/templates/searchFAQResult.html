@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Search - FAQ</title>
+{% endblock meta %}
+
+
+{% block content %}
+<h5>sukses</h5>
+{% for search in data %}
+<h5>{{search.question}}</h5>
+{% endfor %}
+
+{% endblock content %}

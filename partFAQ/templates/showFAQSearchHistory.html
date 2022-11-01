@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Search History - FAQ</title>
+{% endblock meta %}
+
+
+{% block content %}
+{% for search in data %}
+<h5>{{search.search}}</h5>
+{% endfor %}
+
+{% endblock content %}
