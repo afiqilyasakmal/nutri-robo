@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example_app',
     'landingPage',
+    'tinymce',
+    'core.apps.CoreConfig',
+    'blog.apps.BlogConfig',
+
 ]
 
 MIDDLEWARE = [
