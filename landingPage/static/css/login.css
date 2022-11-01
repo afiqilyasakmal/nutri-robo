@@ -1,38 +1,14 @@
 * {
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-text-align: center;
-vertical-align: middle; 
-color: #264655;
+    font-family: 'Futura', Arial, sans-serif;
+    text-align: center;
+    vertical-align: middle; 
+    color: #264655;
 }
-
-body {
-    background-color: rgb(181, 209, 217);
-    background-repeat: no-repeat;
-} 
 
 .navbar {
     background-color: white;
     height: 75px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-}
-
-.navbar h5 {
-    font-family: 'Futura', Arial, sans-serif;
-    font-weight: bolder;
-}
-
-.navbar h7 {
-    font-family: 'Futura', Arial, sans-serif;
-    font-weight: lighter;
-}
-
-.titleLogo{
-    transform: translate(-329px,0);
-}
-
-.subtitleLogo{
-    transform:translate(-777px,10px);
-    font-size: 7.5px;
 }
 
 button {
@@ -50,15 +26,6 @@ button:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
-a {
-    text-decoration: none;
-    color: #264655; 
-}
-
-a:hover {
-    text-decoration: none;
-    color: #264655; 
-}
 
 table {
     margin-top: 100px;

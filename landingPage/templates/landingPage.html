@@ -3,341 +3,26 @@
 
 {% block meta %}
   <title>Introduction</title>
-{% endblock meta %}
-
-{% block content %}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(() => {
-        getFeedback();
-    })
+  <link rel="stylesheet" href="{% static '/css/landingPage.css' %}">
+  <script src="{% static '/js/landingPage.js' %}"></script>
+{% endblock meta %}
 
-    function getFeedback() {
-        $.ajax({
-            type: "GET",
-            url: "/json-all/"
-        }).done((data) => {
-            putFeedback(data);
-        });
-    }
+{% block content %}
 
-    function putFeedback(data) {
-      const cardContainer = $('#allFeedback');
-      cardContainer.empty();
-      data.forEach(task => {
-          const taskCard = `
-          <li class="card">
-            <div>
-              <h6 class="card-title">RATING: ${task.fields.rating}/10</h6>
-              <h6 class="card-subtitle mb-2 text-muted">${task.fields.date}</h6>
-              <div class="card-content">
-              <span>
-                <p>Feedback: </p>
-                <p class="feedback"> ${task.fields.feedback}</p>
-              </span>
-              </div>
-            </div>
-          </li>
-          `
-          cardContainer.append(taskCard);
-        })
-    };
-  </script>
-  <style>
-
-    :root {
-      --red: #ef233c;
-      --darkred: #c00424;
-      --platinum: #e5e5e5;
-      --black: #2b2d42;
-      --white: #fff;
-      --thumb: #edf2f4;
-      --custom: #264655;
-    }
-
-    * {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
-    vertical-align: middle; 
-    color: #264655;
-    }
-
-    body {
-      background-color: rgb(219, 232, 246);
-    } 
-
-    .navbar {
-      background-color: white;
-      height: 75px; 
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-    }
-
-    .navbar h5 {
-      font-family: 'Futura', Arial, sans-serif;
-      font-weight: bolder;
-    }
-
-    .navbar h7 {
-      font-family: 'Futura', Arial, sans-serif;
-      font-weight: lighter;
-    }
-
-    .titleLogo{
-      transform: translate(-307px,0);
-    }
-
-    .subtitleLogo{
-      transform:translate(-733px,10px);
-      font-size: 7.5px;
-    }
-
-    .navbarButton {
-      background-color: white;
-      border-radius: 5px;
-      border-color: #264655;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .navbarButton:hover {
-      background-color: white;
-      border-radius: 5px;
-      border-color: #264655;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    }
-
-    a {
-      text-decoration: none;
-      color: #264655; 
-    }
-
-    a:hover {
-      text-decoration: none;
-      color: #264655; 
-    }
-
-    .carousel {
-      height: 500px;
-      width: 1000px;
-      margin-top: 100px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 100px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    }
-
-    .carousel .carousel-item {
-      height: 500px;
-      width: 1000px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-    }
-
-    .carousel .carousel-item h5 {
-      font-family: 'Futura', Arial, sans-serif;
-      font-weight: bolder;
-    }
-
-    #carouselLabel1 {
-      margin-bottom: 120px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px;
-    }
-
-    #carouselLabel1:hover {
-      margin-bottom: 120px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-      border-radius: 5px;
-      background-color: rgb(251, 251, 251, 0.75);
-    }
-
-    #carouselLabel2 {
-      margin-bottom: 160px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px;
-    }
-
-    #carouselLabel2:hover {
-      margin-bottom: 160px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-      border-radius: 5px;
-      background-color: rgb(251, 251, 251, 0.75);
-    }
-
-    #carouselLabel3 {
-      margin-bottom: 165px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px;
-    }
-
-    #carouselLabel3:hover {
-      margin-bottom: 165px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-      border-radius: 5px;
-      background-color: rgb(251, 251, 251, 0.75);
-    }
-
-    #carouselLabel4 {
-      margin-bottom: 165px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px;
-    }
-
-    #carouselLabel4:hover {
-      margin-bottom: 165px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-      border-radius: 5px;
-      background-color: rgb(251, 251, 251, 0.75);
-    }
-
-    #carouselLabel5 {
-      margin-bottom: 175px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      border-radius: 5px;
-    }
-
-    #carouselLabel5:hover {
-      margin-bottom: 175px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-      border-radius: 5px;
-      background-color: rgb(251, 251, 251, 0.75);
-    }
-
-    .carousel-item img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        position: relative;
-        z-index: -1;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
-        border-radius: 5px;
-        opacity: 0.5;
-    }
-
-    .container {
-      max-width: 1400px;
-      padding: 0 15px;
-      margin: 0 auto;
-    }
-
-    .cards {
-      display: flex;
-      padding: 25px 15px 25px 15px;
-      list-style: none;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      background-color: rgb(219, 232, 246);
-      border-radius: 5px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      flex: 0 0 100%;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
-      scroll-snap-align: 0;
-      transition: all 0.3s;
-      background-image: url(https://img.freepik.com/free-vector/cute-gird-background-minimal-pink-design-vector_53876-156576.jpg?w=996&t=st=1667224166~exp=1667224766~hmac=3442bd0cd1f81f87c14ee53b2eeaa1333bda4b3197319ed73c22616b7379f820);
-    }
-
-    .card:not(:last-child) {
-      margin-right: 10px;
-    }
-
-    .card:hover {
-      background-color: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 50%);
-      background-image: url(https://img.freepik.com/free-vector/cute-gird-background-minimal-pink-design-vector_53876-156576.jpg?w=996&t=st=1667224166~exp=1667224766~hmac=3442bd0cd1f81f87c14ee53b2eeaa1333bda4b3197319ed73c22616b7379f820);
-    }
-
-    .card .card-title {
-      font-size: 14px;
-      text-align: right;
-    }
-
-    .card .card-subtitle {
-      font-size: 14px;
-      text-align: right;
-    }
-
-    .card .card-content {
-      margin: auto;
-      font-size: 14px;
-      max-width: 85%;
-    }
-
-    .card .card-link-wrapper {
-      margin-top: auto;
-    }
-
-    .cards::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .cards::-webkit-scrollbar-thumb,
-    .cards::-webkit-scrollbar-track {
-      border-radius: 64px;
-    }
-
-    .cards::-webkit-scrollbar-thumb {
-      background: var(--custom);
-    }
-
-    .cards::-webkit-scrollbar-track {
-      background: var(--thumb);
-    }
-
-    @media (min-width: 500px) {
-      .card {
-        flex-basis: calc(50% - 10px);
-      }
-
-      .card:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-
-    @media (min-width: 700px) {
-      .card {
-        flex-basis: calc(calc(100% / 3) - 20px);
-      }
-
-      .card:not(:last-child) {
-        margin-right: 30px;
-      }
-    }
-
-    @media (min-width: 1100px) {
-      .card {
-        flex-basis: calc(25% - 30px);
-      }
-
-      .card:not(:last-child) {
-        margin-right: 40px;
-      }
-    }
-
-  </style>
+<body style="background-color: rgb(219, 232, 246);">
   <!-- Navigation Bar -->
   <nav class="navbar fixed-top" id ="navbar">
     <div class="container-fluid">
-      <img src="https://img.freepik.com/free-vector/cute-robot-flying-cartoon-illustration-people-technology-icon-concept_138676-1892.jpg?w=740&t=st=1666951835~exp=1666952435~hmac=22702720339b3397dc817bbf5f5d2d8b547b4c2fe15a808103c1a4a1a44b26df" alt="" width="60" height="60" class="d-inline-block align-text-top" id="logoImage">
-      <h5 class="titleLogo">NUTRI-ROBO</h5>
-      <h7 class ="subtitleLogo">Your Personal Healthcare Companion</h7>
+      <img src="{% static '/images/logo.jpg' %}" alt="" width="225" height="55"  id="logoImage">
       <span class = "modalButton">
         <button type="button" class="navbarButton">
-          <a href="{% url 'landingPage:login_user' %}">SIGN IN</a>
+          <a href="{% url 'landingPage:login_user' %}" style="text-decoration: none; color: #264655;">SIGN IN</a>
         </button>
         <button type="button" class="navbarButton">
-          <a href="{% url 'landingPage:register' %}">SIGN UP</a>
+          <a href="{% url 'landingPage:register' %}" style="text-decoration: none; color: #264655;">SIGN UP</a>
         </button>
       </span>
     </div>
@@ -354,45 +39,45 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
-        <img src="https://img.freepik.com/free-vector/tiny-people-standing-near-keto-diet-diagram-food-persons-eating-meal-with-low-carb-high-protein-products-healthy-ketogenic-state-treatment-flat-vector-illustration-ketosis-concept_74855-25354.jpg?w=1380&t=st=1666951091~exp=1666951691~hmac=b62c3036af28eb8a2f7d5bfa0d2a7cce46c1b629d4dae760dc9c83f2593d83fb" class="d-block w-100" alt="...">
+        <img src="{% static '/images/nutriroboImage.jpg' %}" class="d-block w-100" alt="...">
         <a href="{% url 'landingPage:show_landingPage' %}">
-          <div class="carousel-caption d-none d-md-block" id ="carouselLabel1">
+          <div class="carousel-caption" id ="carouselLabel1">
             <h5>HELLO NUTRI-ROBO!</h5>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>Anindya Lokeswara</p>
           </div>
         </a>
       </div>
       <div class="carousel-item">
-        <img src="https://img.freepik.com/free-vector/flat-woman-diet-control-normal-weight-with-bmi-scale_88138-933.jpg?w=996&t=st=1666962886~exp=1666963486~hmac=27a7398a8ed1cbcb4415b104af033eebdd487b7a790691caaa6bdecc6bff4ee2" class="d-block w-100" alt="...">
+        <img src="{% static '/images/trackerImage.jpg' %}" class="d-block w-100" alt="...">
         <a href="#"> <!-- 'tracker:show_tracker' -->
-          <div class="carousel-caption d-none d-md-block" id ="carouselLabel2">
+          <div class="carousel-caption" id ="carouselLabel2">
             <h5>TRACKER</h5>
             <p>"Should you need any assistance in tracking your health, we are always at your service to help you get on track."</p>
           </div>
         </a>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://img.freepik.com/free-vector/flat-hand-drawn-patient-taking-medical-examination_52683-57829.jpg?w=996&t=st=1666975550~exp=1666976150~hmac=18cd2f021b1eb7cc19d870a897e23b69797d5776c95b8f455a61f232d699b426" class="d-block w-100" alt="...">
-        <a href="#"> <!--   'user_profile:user_profile'  -->
-          <div class="carousel-caption d-none d-md-block" id ="carouselLabel3">
+        <img src="{% static '/images/targetHealthImage.jpg' %}" class="d-block w-100" alt="...">
+        <a href="#"> <!-- 'user_profile:user_profile' -->
+          <div class="carousel-caption" id ="carouselLabel3">
             <h5>TARGET HEALTH</h5>
             <p>"Record changes of your health data here, nutri-robo is ready to be your personal assistant to recommend the best health targets according to your physical condition."</p>
           </div>
         </a>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://img.freepik.com/free-vector/blogging-illustration-concept_114360-788.jpg?w=996&t=st=1667191307~exp=1667191907~hmac=1414117b493123b9e480ff47f7bd8cea3fc1c09cf0c47cead1e4fe3e65da9644" class="d-block w-100" alt="...">
-        <a href="#"> <!--  'core:frontpage'  -->
-          <div class="carousel-caption d-none d-md-block" id ="carouselLabel4">
+        <img src="{% static '/images/blogImage.jpg' %}" class="d-block w-100" alt="...">
+        <a href="{% url 'landingPage:frontpage' %}"> 
+          <div class="carousel-caption" id ="carouselLabel4">
             <h5>BLOG</h5>
             <p>"Find everything you need about health advice and daily motivation here. Better advice, better health."</p>
           </div>
         </a>
       </div>
       <div class="carousel-item">
-        <img src="https://img.freepik.com/free-vector/group-discussion-concept-illustration_114360-8522.jpg?w=996&t=st=1666963214~exp=1666963814~hmac=601cbe4f051125ecc112c486719e92632958d834cf7a2091a293d38c9cf29fd2" class="d-block w-100" alt="...">
-        <a href="#"> <!-- 'partFAQ:FAQ'  -->
-          <div class="carousel-caption d-none d-md-block" id ="carouselLabel5">
+        <img src="{% static '/images/faqImage.jpg' %}" class="d-block w-100" alt="...">
+        <a href="#"> <!-- 'partFAQ:FAQ' -->
+          <div class="carousel-caption" id ="carouselLabel5">
             <h5>FAQ</h5>
             <p>"Here you can find answers to the most frequently asked questions. "</p>
           </div>
@@ -417,5 +102,7 @@
     <ul class="cards" id="allFeedback">
     </ul>
   </div>
+</body>
+  
 
 {% endblock content %}

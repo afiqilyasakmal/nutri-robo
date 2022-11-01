@@ -9,40 +9,16 @@
 }
 
 * {
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family:'Futura', Arial, sans-serif;
 text-align: center;
 vertical-align: middle; 
 color: #264655; 
 }
 
-body {
-    background-color: rgb(219, 232, 246);
-} 
-
 .navbar {
     background-color: white;
     height: 75px; 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
-}
-
-.navbar h5 {
-    font-family: 'Futura', Arial, sans-serif;
-    font-weight: bolder;
-
-}
-
-.navbar h7 {
-    font-family: 'Futura', Arial, sans-serif;
-    font-weight: lighter;
-}
-
-.titleLogo{
-    transform: translate(-285px,0);
-}
-
-.subtitleLogo{
-    transform:translate(-690px,10px);
-    font-size: 7.5px;
 }
 
 .navbarButton {
@@ -51,6 +27,7 @@ body {
     border-color: #264655;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
+    font-size: small;
 }
 
 .navbarButton:hover {
@@ -63,17 +40,7 @@ body {
 .cookiesText {
     text-align: left;
     margin-top: 85px;
-    margin-left: 28px;
-}
-
-a {
-    text-decoration: none;
-    color: #264655; 
-}
-
-a:hover {
-    text-decoration: none;
-    color: #264655; 
+    margin-left: 50px;
 }
 
 .carousel {
@@ -111,14 +78,14 @@ a:hover {
 }
 
 #carouselLabel2 {
-    margin-bottom: 160px;
+    margin-bottom: 175px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
 }
 
 #carouselLabel2:hover {
-    margin-bottom: 160px;
+    margin-bottom: 175px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
     border-radius: 5px;
     background-color: rgb(251, 251, 251, 0.75);
@@ -254,6 +221,8 @@ a:hover {
     background: var(--thumb);
 }
 
+
+
 @media (min-width: 500px) {
     .card {
     flex-basis: calc(50% - 10px);
@@ -261,6 +230,109 @@ a:hover {
 
     .card:not(:last-child) {
     margin-right: 20px;
+    }
+
+    .carousel {
+        height: 200px;
+        width: 400px;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 200px;
+        width: 400px;
+        position: relative;
+        z-index: -1;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        opacity: 0.5;
+    }
+
+    .carousel .carousel-item {
+        height: 200px;
+        width: 400px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+    }
+    
+    .carousel .carousel-item h5 {
+        font-family: 'Futura', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: smaller;
+    }
+
+    .carousel .carousel-item p {
+        font-family: 'Futura', Arial, sans-serif;
+        font-size: smaller;
+    }
+    
+    #carouselLabel1 {
+        margin-bottom: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel1:hover {
+        margin-bottom: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel2 {
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel2:hover {
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel3 {
+        margin-bottom: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel3:hover {
+        margin-bottom: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel4 {
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel4:hover {
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel5 {
+        margin-bottom: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel5:hover {
+        margin-bottom: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
     }
 }
 
@@ -272,6 +344,110 @@ a:hover {
     .card:not(:last-child) {
     margin-right: 30px;
     }
+
+    .carousel {
+        height: 300px;
+        width: 600px;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 300px;
+        width: 600px;
+        position: relative;
+        z-index: -1;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        opacity: 0.5;
+    }
+
+    .carousel .carousel-item {
+        height: 300px;
+        width: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+    }
+    
+    .carousel .carousel-item h5 {
+        font-family: 'Futura', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: medium;
+    }
+
+    .carousel .carousel-item p {
+        font-family: 'Futura', Arial, sans-serif;
+        font-size: medium;
+    }
+    
+
+    #carouselLabel1 {
+        margin-bottom: 70px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel1:hover {
+        margin-bottom: 70px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel2 {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel2:hover {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel3 {
+        margin-bottom: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel3:hover {
+        margin-bottom: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel4 {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel4:hover {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel5 {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel5:hover {
+        margin-bottom: 60px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
 }
 
 @media (min-width: 1100px) {
@@ -281,5 +457,108 @@ a:hover {
 
     .card:not(:last-child) {
     margin-right: 40px;
+    }
+
+    .carousel {
+        height: 500px;
+        width: 1000px;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        opacity: 0.5;
+    }
+
+    .carousel .carousel-item {
+        height: 500px;
+        width: 1000px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+    }
+    
+    .carousel .carousel-item h5 {
+        font-family: 'Futura', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: large;
+    }
+
+    .carousel .carousel-item p {
+        font-family: 'Futura', Arial, sans-serif;
+        font-size: large;
+    }
+    
+    #carouselLabel1 {
+        margin-bottom: 180px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel1:hover {
+        margin-bottom: 180px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel2 {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel2:hover {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel3 {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel3:hover {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel4 {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel4:hover {
+        margin-bottom: 165px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
+    }
+    
+    #carouselLabel5 {
+        margin-bottom: 175px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    
+    #carouselLabel5:hover {
+        margin-bottom: 175px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+        border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
     }
 }

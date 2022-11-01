@@ -1,6 +1,8 @@
 from django.urls import path
 from landingPage.views import show_landingPage, show_afterLoginlandingPage, register, login_user, logout_user, add_feedback, delete_feedback, show_allFeedback_json, show_userFeedback_json
 
+from core.views import frontpage # dari aplikasi core
+
 app_name = 'landingPage'
 
 urlpatterns = [
@@ -13,4 +15,5 @@ urlpatterns = [
     path('delete-task/<int:pk>', delete_feedback, name='delete_feedback'),
     path('json-all/', show_allFeedback_json, name='show_allFeedback_json'),
     path('json-user/', show_userFeedback_json, name='show_userFeedback_json'),
+    path('blog/', frontpage, name='frontpage'), # dari aplikasi core
 ]
