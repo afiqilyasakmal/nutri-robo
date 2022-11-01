@@ -5,6 +5,10 @@
     color: #264655;
 }
 
+body {
+    background-color: rgb(219, 232, 246);
+}
+
 button {
     background-color: white;
     border-radius: 5px;
