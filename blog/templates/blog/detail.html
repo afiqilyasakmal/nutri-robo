@@ -3,8 +3,12 @@
 {% block title %}{{ post.title }} | {% endblock %}
 
 {% block content %}
+
+    
+
     <div class="block ">
       <div class="column is-8 is-offset-2">
+
         
         <!-- Article Section -->
         <div class="card article">
@@ -46,7 +50,7 @@
                                     <div class="field">
                                         <label class="label is-size-5" for="id_name">Name:</label>
                                         <div class="control">
-                                            <input class="input is-size-5" type="text" name="name" placeholder="Your name" maxlength="254" required id="id_name" >
+                                            <input readonly value="{{ request.user }}" class="input is-size-5" type="text" name="name" maxlength="254" required id="id_name" >
                                         </div>
                                     </div>
                                 </p>
@@ -145,5 +149,13 @@
         </div>
     </div>
     <!-- End Comment Section -->
+    
+</div>
+</div>
+<div class="block">
+    <div class="column is-8 is-offset-2 mt-5">
+    <p class="has-text-centered has-text-weight-light is-family-monospace	">You're logged in as {{request.user}}. Your last login was on {{last_login}}</p>
+    </div>
+</div>
 
 {% endblock %}

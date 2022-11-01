@@ -11,6 +11,4 @@ def frontpage(request):
 
 # Halaman about
 def about(request):
-    return render(request, 'core/aboout.html')
-
-#
+    return render(request, 'core/about.html')

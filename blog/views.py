@@ -2,14 +2,15 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import Post
 from .models import Comment
-
 from .forms import CommentForm
-
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
 # detail post dan comments
+@login_required(login_url='/login/')
 def detail(request, slug):
     post = Post.objects.get(slug=slug)
     comments_count = len(post.comments.all()) + 1
@@ -29,4 +30,4 @@ def detail(request, slug):
     else:
         form = CommentForm()
 
-    return render(request, 'blog/detail.html', {'post': post, 'form': form, 'comments': comments})
+    return render(request, 'blog/detail.html', {'post': post, 'form': form, 'comments': comments, 'last_login': request.user.last_login.strftime('%m/%d/%Y, %H:%M:%S')})

@@ -5,7 +5,7 @@
         <meta charset="utf=8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}{% endblock %}Cobablog</title>
+        <title>{% block title %}{% endblock %}Nutrirobo</title>
         <!-- Bulma Version 0.9.0-->
         <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
         <!-- JQuery -->
@@ -21,7 +21,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
+                    <a class="navbar-item" href="/landingpage">
                         <strong>NUTRI-ROBO</strong>
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
@@ -31,37 +31,31 @@
                     </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href='/' class="navbar-item is-active">
-                                Home
+                    <div class="navbar-end has-text-weight-bold">
+                        <a href='/blog' class="navbar-item is-active">
+                                Blog
                             </a>
-                        <a class="navbar-item">
-                                Menu 1
-                            </a>
-                        <a class="navbar-item">
-                                Menu 2
-                            </a>
-                        <a class="navbar-item">
-                                Menu 3
+                        <a href='/blog/about' class="navbar-item">
+                                About
                             </a>
                         <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                    Menu Dropdown
+                            <a class="navbar-link" href="#">
+                                    Our Apps
                                 </a>
                             <div class="navbar-dropdown">
-                                <a class="navbar-item">
-                                        Dropdown 1
+                                <a class="navbar-item" href="#">
+                                        Profile
                                     </a>
-                                <a class="navbar-item">
-                                        Dropdown 2
+                                <a class="navbar-item" href="#">
+                                        Tracker
                                     </a>
-                                <a class="navbar-item">
-                                        Dropdown 3
+                                <a class="navbar-item" href="#">
+                                        FAQ
                                     </a>
-                                <hr class="navbar-divider">
-                                <div class="navbar-item">
+                                <!--<hr class="navbar-divider">
+                                <div class="navbar-item" href="#">
                                     Logout
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -78,7 +72,7 @@
         <!-- START FOOTER -->
         <footer class="footer">
             <div class="content has-text-centered">
-                <p>Copyright &copy; 2022 NUTRI-ROBO. Better advice, better health.</p>
+                <p>Copyright &copy; 2022 Nutri-robo.</p>
             </div>
         </footer>
         <!-- END FOOTER -->
