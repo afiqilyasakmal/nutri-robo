@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'tinymce',
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
+    'user_profile',
 
 ]
 

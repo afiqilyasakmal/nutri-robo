@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('landingPage.urls')),
     path('', include('blog.urls')),
     path('blog/', frontpage, name='frontpage'), # dari aplikasi core
+    path('user_profile/', include('user_profile.urls'))
 ]
