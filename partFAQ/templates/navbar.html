@@ -12,7 +12,7 @@
                     <a class="nav-link active" href="{% url 'landingPage:show_landingPage' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'partFAQ:mainPageFAQ' %}">Blog</a>
+                    <a class="nav-link active" href="{% url 'nutrirobo:frontpage' %}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{% url 'tracker:show_tracker' %}">Tracker</a>
@@ -21,10 +21,7 @@
                     <a class="nav-link active" href="{% url 'partFAQ:mainPageFAQ' %}">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'partFAQ:mainPageFAQ' %}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Logout</a>
+                    <a class="nav-link" href="{% url 'landingPage:logout' %}">Logout</a>
                 </li> 
             </ul>
         </div>
