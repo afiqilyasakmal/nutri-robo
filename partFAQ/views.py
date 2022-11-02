@@ -6,7 +6,7 @@ from partFAQ.models import FAQContent
 
 from .forms import *
 
-@login_required(login_url='/landingPage/login/')
+@login_required(login_url='/login/')
 def mainPageFAQ(request):
     return render(request, 'mainPageFAQ.html')
 
@@ -15,7 +15,7 @@ def getFAQContent(request):
         data = FAQContent.objects.all()
         return HttpResponse(serializers.serialize("json", data ), content_type="application/json")
 
-@login_required(login_url='/landingPage/login/')
+@login_required(login_url='/login/')
 def showFAQbyId(request, id):
     faq = FAQContent.objects.get(pk=id)
     contents = {
@@ -55,5 +55,4 @@ def deleteFAQSearchHistory(request):
     data = request.user.search_history.all()
     data.delete()
     return redirect('partFAQ:showFAQSearchHistory')
-
 

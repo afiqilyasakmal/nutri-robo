@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Your Target Health{% endblock %}
+
+{% block content %}
+<div class="login">
+    <h1 class="text-center">👤 Create Your Profile 👤</h1>
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                    <div class="card card-body bg-dark ">
+                        <h4 class="text-danger">Fill your data below</h4>
+                        <form method="POST" action="" class="text-white">
+                            {% csrf_token %}
+                            <table class="table table-danger table-striped">  
+                                {{ profile_form.as_table }}  
+                                <tr>  
+                                    <td></td>
+                                    <td><input class= "btn btn-danger" type="submit" name="submit" value="Submit"/></td>  
+                                </tr>  
+                            </table>  
+                        </form>
+
+                        {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}     
+        
+                        <p class="small-xl pt-3 text-center text-white" >Belum mempunyai akun?</p>
+                        <input type="button" class="btn btn-outline-danger" value="Buat Akun" onclick=" relocate_home()">
+
+                        <script>
+                        function relocate_home()
+                        {
+                        location.href = "{% url 'landingPage:register' %}";c
+                        } 
+                        </script>
+
+{% endblock %}

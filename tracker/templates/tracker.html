@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,10 +13,8 @@
     <nav class="navbar fixed-top" id ="navbar">
         <div class="container-fluid">
           <a href="{% url 'landingPage:show_landingPage' %}">
-            <img src="https://img.freepik.com/free-vector/cute-robot-flying-cartoon-illustration-people-technology-icon-concept_138676-1892.jpg?w=740&t=st=1666951835~exp=1666952435~hmac=22702720339b3397dc817bbf5f5d2d8b547b4c2fe15a808103c1a4a1a44b26df" alt="" width="60" height="60" class="d-inline-block align-text-top" id="logoImage">
+            <img src="{% static '/images/logo.jpg' %}" alt="" id="logoImage">
           </a>
-          <h5 class="titleLogo">NUTRI-ROBO</h5>
-          <h7 class ="subtitleLogo">Your Personal Healthcare Companion</h7>
           <p id="date-info"></p>
         </div>
       </nav>
@@ -420,13 +420,13 @@
         let text = document.getElementById('calorie').innerText;
         const arr = text.split(" ");
         let k = parseInt(arr[0]);
-        if(k < 200) {
-            var x = 200 - k;
+        if(k < 2000) {
+            var x = 2000 - k;
             data_card += 
             `<h6 class="text-center name">${x} kkal to go! Remember, healthy eating is a bank account. Good foods are good investments!</h6>`;
             $('#fbCalorieNo').append(data_card);
         }
-        else if (k == 200) {
+        else if (k == 2000) {
             data_card += 
             `<h6 class="text-center name">Great job! Love the investment! Now, look in the mirror and say that to yourself, will you?</h6>`;
             $('#fbCalorieYes').append(data_card);
@@ -487,8 +487,8 @@
         let text = document.getElementById('water').innerText;
         const arr = text.split(" ");
         let k = parseInt(arr[0]);
-        if(k < 200) {
-            var x = 200 - k;
+        if(k < 2000) {
+            var x = 2000 - k;
             data_card += 
             `<h6 class="text-center name">${x} ml to go! Don't forget to drink your water and get some sun. We're basically a houseplant with more complicated emotions.</h6>`;
             $('#fbWaterNo').append(data_card);
@@ -906,6 +906,11 @@
         background-image: url(https://img.freepik.com/free-vector/cute-gird-background-minimal-pink-design-vector_53876-156576.jpg?w=996&t=st=1667224166~exp=1667224766~hmac=3442bd0cd1f81f87c14ee53b2eeaa1333bda4b3197319ed73c22616b7379f820);
     }
     
+    #logoImage {
+        width: 150px;
+        height: 35px;
+    }
+
     .card:not(:last-child) {
         margin-right: 10px;
     }
