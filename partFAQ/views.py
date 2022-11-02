@@ -11,7 +11,6 @@ def mainPageFAQ(request):
 def getFAQContent(request):
     if request.method == 'GET':
         data = FAQContent.objects.all()
-        # print(data)
         return HttpResponse(serializers.serialize("json", data ), content_type="application/json")
 
 def showFAQbyId(request, id):
@@ -26,14 +25,18 @@ def searchFAQ(request):
         searched = request.POST.get('search')
         data = FAQContent.objects.filter(question__contains=searched)
 
-        # bikin history search
+        if (request.user.search_history.filter(search=searched).exists()):
+            # bikin history search
+            request.user.search_history.filter(search=searched).delete()
+
         form = SearchFAQForm(request.POST)
         if form.is_valid():
             print("form sudah valid")
             task = form.save(commit=False)
             task.user = request.user
             task.save()
-            return HttpResponse(serializers.serialize("json", data ), content_type="application/json")
+            
+        return HttpResponse(serializers.serialize("json", data ), content_type="application/json")
 
     else:
 
@@ -44,6 +47,9 @@ def showFAQSearchHistory(request):
 
     return render(request, 'showFAQSearchHistory.html', {'data':data_history})
 
-# render searchFAQResult.html after POST request
+def deleteFAQSearchHistory(request):
+    data = request.user.search_history.all()
+    data.delete()
+    return redirect('partFAQ:showFAQSearchHistory')
 
 

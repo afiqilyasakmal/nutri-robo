@@ -1,54 +1,58 @@
 {% extends 'base.html' %}
 
 {% block meta %}
+{% include 'htmlFAQConfiguration.html' %}
 <title>FAQ</title>
 
 <!-- {% load static %} -->
-<script src="/static/mainPageFAQ.js"></script>
+<script src="/static/javascript/mainPageFAQ.js"></script>
+<script src="/static/javascript/searchFAQAutocomplete.js"></script>
+<link href="/static/css/mainPageFAQ.css" rel="stylesheet" >
 
 {% endblock meta %}
 
 {% block content %}
+<!-- show navbar -->
+{% include 'navbar.html' %}
 
-
-
-<div class="container">
+<div class="container bg-white rounded shadow mt-5" >
     <div class="row">
         <div class="col-md-12">
-            <h1>FAQ</h1>
-            <p>Here you can find answers to the most frequently asked questions.</p>
+            
+            <div class="h2 text-center fw-bold " id="title_main_page">Frequently Asked Question</div> 
 
             <!-- menampilkan search bar -->
-            <input type="text" id="search_bar" placeholder="Search for questions..">
-            <button type="button" class="btn btn-primary" id = "submit_search" >Search</button>
+            <div class="input-group mb-3">
+                <input class="form-control form-control-lg" type="text" id="search_bar" placeholder="Search for questions..">
+                <button type="button" class="btn btn-secondary" id = "submit_search" >Search</button>
+            </div>
+            
 
             <!-- meanmpilkan history search -->
-            <p><a href="{% url 'partFAQ:showFAQSearchHistory' %}">Lihat History Pencarian</a></p>
+            <p><a href="{% url 'partFAQ:showFAQSearchHistory' %}">See search history</a></p>
 
             <!-- menampilkan daftar-daftar FAQ -->
-            <div class="row">
-                <div class="col-md-12" id="show_question">
-                    <!-- <div class="panel-group" id="accordion" role="tablist>" aria-multiselectable="true">
-                        <div class="panel panel-default"> -->
-                            
-                            <!-- <div class="panel-heading" role="tab" id="heading{{faq.id}}">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{faq.id}}" aria-expanded="true" aria-controls="collapse{{faq.id}}">
-                                        {{faq.question}}
-                                    </a>
-                                </h4>
-                            </div> -->
-                            <!-- <div id="collapse{{faq.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{faq.id}}">
-                                <div class="panel-body">
-                                    {{faq.answer}}
-                                </div>
-                            </div> -->
-                        <!-- </div>
-                    </div> -->
-                </div>
+
+            <div id="show_question">
+
             </div>
+
+            <br></br>
         </div>
     </div>
 </div>
+
+
+<!--Make sure the form has the autocomplete function switched off:-->
+<!-- <form autocomplete="off" action="/action_page.php">
+    <div class="autocomplete" style="width:300px;">
+      <input id="myInput" type="text" name="myCountry" placeholder="Country">
+    </div>
+    <input type="submit">
+</form> -->
+
+
+
 {% endblock content %}
+
 
