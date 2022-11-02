@@ -21,8 +21,8 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/landingpage">
-                        <strong>NUTRI-ROBO</strong>
+                    <a class="navbar-item" href="/">
+                        <img src="{% static '/images/nutrirobo_logo.jpg' %}" alt="" id="logoImage">
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
@@ -38,6 +38,7 @@
                         <a href='/blog/about' class="navbar-item">
                                 About
                             </a>
+                        
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link" href="#">
                                     Our Apps
@@ -52,12 +53,17 @@
                                 <a class="navbar-item" href="#">
                                         FAQ
                                     </a>
-                                <!--<hr class="navbar-divider">
-                                <div class="navbar-item" href="#">
-                                    Logout
-                                </div> -->
                             </div>
                         </div>
+                        {% if user.is_authenticated %}
+                        <a href='/logout' class="navbar-item has-text-danger">
+                            Logout
+                        </a>
+                        {% else %}
+                        <a href='/login' class="navbar-item has-text-info">
+                            Login
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -76,6 +82,8 @@
             </div>
         </footer>
         <!-- END FOOTER -->
+
+        <!-- Alternative to js file from static -->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 //The first argument are the elements to which the plugin shall be initialized
