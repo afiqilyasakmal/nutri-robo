@@ -45,12 +45,7 @@ INSTALLED_APPS = [
     'tinymce',
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
-<<<<<<< HEAD
-    'user_profile',
-
-=======
     'tracker',
->>>>>>> e8eec42819abf3490bf79da7ba4b2199c96be2d0
 ]
 
 MIDDLEWARE = [
