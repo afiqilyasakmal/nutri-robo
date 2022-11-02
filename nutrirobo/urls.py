@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('FAQ/', include('partFAQ.urls')),
     path('blog/', frontpage, name='frontpage'), # dari aplikasi core
+    path('tracker/', include('tracker.urls')),
 ]
