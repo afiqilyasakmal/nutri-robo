@@ -45,7 +45,7 @@ def searchFAQ(request):
 
         return HttpResponseNotFound()
 
-@login_required(login_url='/login/')
+@login_required(login_url='/landingPage/login/')
 def showFAQSearchHistory(request):
     data_history = request.user.search_history.all()
 

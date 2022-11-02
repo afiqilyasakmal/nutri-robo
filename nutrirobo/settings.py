@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
     'tracker',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
