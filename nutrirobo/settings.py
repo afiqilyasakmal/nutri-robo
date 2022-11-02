@@ -40,12 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'example_app',
+    'partFAQ',
     'landingPage',
     'tinymce',
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
+<<<<<<< HEAD
     'user_profile',
 
+=======
+    'tracker',
+>>>>>>> e8eec42819abf3490bf79da7ba4b2199c96be2d0
 ]
 
 MIDDLEWARE = [

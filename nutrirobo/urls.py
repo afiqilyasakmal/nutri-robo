@@ -23,6 +23,12 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', include('landingPage.urls')),
     path('', include('blog.urls')),
+    path('FAQ/', include('partFAQ.urls')),
     path('blog/', frontpage, name='frontpage'), # dari aplikasi core
+<<<<<<< HEAD
     path('user_profile/', include('user_profile.urls'))
 ]
+=======
+    path('tracker/', include('tracker.urls')),
+]
+>>>>>>> e8eec42819abf3490bf79da7ba4b2199c96be2d0

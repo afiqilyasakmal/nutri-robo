@@ -13,17 +13,15 @@ import datetime
 # Create your views here.
 
 def show_landingPage(request):
-    return render(request, 'landingPage.html')
-
-@login_required(login_url='/login/')
-def show_afterLoginlandingPage(request):
-    form = FeedbackForm(request.POST)
-    context = {
-        'form': form,
-        'last_login': request.COOKIES['last_login'],
+    if request.user.is_authenticated:
+        form = FeedbackForm(request.POST)
+        context = {
+            'form': form,
+            'last_login': request.COOKIES['last_login'],
         }
-
-    return render(request, 'afterLoginLandingPage.html', context)
+        return render(request, 'landingPage.html', context)
+    else:
+        return render(request, 'landingPage.html')
 
 def register(request):
     form = UserCreationForm()
@@ -33,9 +31,9 @@ def register(request):
             form.save()
             messages.success(request, 'Account has been created successfully!')
             return redirect('landingPage:login_user')
-    
     context = {'form':form}
     return render(request, 'register.html', context) 
+
 
 def login_user(request):
     if request.method == 'POST':
@@ -44,7 +42,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage")) # membuat response
+            response = HttpResponseRedirect(reverse("landingPage:show_landingPage")) # membuat response
             response.set_cookie('last_login', str(datetime.datetime.now()))
             return response
         else:
@@ -66,15 +64,15 @@ def add_feedback(request): ####
             feedback = form.save(commit=False)
             feedback.user = request.user
             feedback.save()
-            response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage"))
+            response = HttpResponseRedirect(reverse("landingPage:show_landingPage"))
             return response
-    response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage"))
+    response = HttpResponseRedirect(reverse("landingPage:show_landingPage"))
     return response
 
 def delete_feedback(request, pk):
     data = FeedbackItem.objects.get(id=pk)
     data.delete()
-    response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage"))
+    response = HttpResponseRedirect(reverse("landingPage:show_landingPage"))
     return response
 
 @login_required(login_url='/login/')
