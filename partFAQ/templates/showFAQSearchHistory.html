@@ -2,7 +2,8 @@
 
 {% block meta %}
 {% include 'htmlFAQConfiguration.html' %}
-<link href="/static/css/showFAQSearchHistory.css" rel="stylesheet" >
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/showFAQSearchHistory.css/' %}">
 
 <title>Search History - FAQ</title>
 {% endblock meta %}

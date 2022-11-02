@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block meta %}
 {% include 'htmlFAQConfiguration.html' %}
-<link href="/static/css/mainPageFAQ.css" rel="stylesheet" >
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mainPageFAQ.css/' %}">
+
 <title>FAQ</title>
 {% endblock meta %}
 

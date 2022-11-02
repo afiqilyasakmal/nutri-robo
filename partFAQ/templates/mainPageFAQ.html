@@ -4,10 +4,9 @@
 {% include 'htmlFAQConfiguration.html' %}
 <title>FAQ</title>
 
-<!-- {% load static %} -->
-<script src="/static/javascript/mainPageFAQ.js"></script>
-<script src="/static/javascript/searchFAQAutocomplete.js"></script>
-<link href="/static/css/mainPageFAQ.css" rel="stylesheet" >
+{% load static %}
+<script src="{% static 'javascript/mainPageFAQ.js/' %}"></script>
+<link rel="stylesheet" href="{% static 'css/mainPageFAQ.css/' %}">
 
 {% endblock meta %}
 
