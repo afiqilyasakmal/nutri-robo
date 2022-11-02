@@ -420,13 +420,13 @@
         let text = document.getElementById('calorie').innerText;
         const arr = text.split(" ");
         let k = parseInt(arr[0]);
-        if(k < 200) {
-            var x = 200 - k;
+        if(k < 2000) {
+            var x = 2000 - k;
             data_card += 
             `<h6 class="text-center name">${x} kkal to go! Remember, healthy eating is a bank account. Good foods are good investments!</h6>`;
             $('#fbCalorieNo').append(data_card);
         }
-        else if (k == 200) {
+        else if (k == 2000) {
             data_card += 
             `<h6 class="text-center name">Great job! Love the investment! Now, look in the mirror and say that to yourself, will you?</h6>`;
             $('#fbCalorieYes').append(data_card);
@@ -487,8 +487,8 @@
         let text = document.getElementById('water').innerText;
         const arr = text.split(" ");
         let k = parseInt(arr[0]);
-        if(k < 200) {
-            var x = 200 - k;
+        if(k < 2000) {
+            var x = 2000 - k;
             data_card += 
             `<h6 class="text-center name">${x} ml to go! Don't forget to drink your water and get some sun. We're basically a houseplant with more complicated emotions.</h6>`;
             $('#fbWaterNo').append(data_card);
