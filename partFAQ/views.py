@@ -1,10 +1,12 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.core import serializers
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from partFAQ.models import FAQContent
-from .forms import *
-# Create your views here.
 
+from .forms import *
+
+@login_required(login_url='/landingPage/login/')
 def mainPageFAQ(request):
     return render(request, 'mainPageFAQ.html')
 
@@ -13,6 +15,7 @@ def getFAQContent(request):
         data = FAQContent.objects.all()
         return HttpResponse(serializers.serialize("json", data ), content_type="application/json")
 
+@login_required(login_url='/landingPage/login/')
 def showFAQbyId(request, id):
     faq = FAQContent.objects.get(pk=id)
     contents = {
@@ -42,6 +45,7 @@ def searchFAQ(request):
 
         return HttpResponseNotFound()
 
+@login_required(login_url='/landingPage/login/')
 def showFAQSearchHistory(request):
     data_history = request.user.search_history.all()
 
@@ -51,5 +55,4 @@ def deleteFAQSearchHistory(request):
     data = request.user.search_history.all()
     data.delete()
     return redirect('partFAQ:showFAQSearchHistory')
-
 
