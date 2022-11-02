@@ -1,5 +1,5 @@
 from django.urls import path
-from landingPage.views import show_landingPage, show_afterLoginlandingPage, register, login_user, logout_user, add_feedback, delete_feedback, show_allFeedback_json, show_userFeedback_json
+from landingPage.views import show_landingPage, register, login_user, logout_user, add_feedback, delete_feedback, show_allFeedback_json, show_userFeedback_json
 
 from core.views import about, frontpage # dari aplikasi core (afiq)
 
@@ -7,7 +7,6 @@ app_name = 'landingPage'
 
 urlpatterns = [
     path('', show_landingPage, name='show_landingPage'),
-    path('landingpage/', show_afterLoginlandingPage, name='show_afterLoginlandingPage'),
     path('register/', register, name='register'),
     path('login/', login_user, name='login_user'),
     path('logout/', logout_user, name='logout_user'),
