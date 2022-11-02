@@ -15,15 +15,10 @@ import datetime
 def show_landingPage(request):
     if request.user.is_authenticated:
         form = FeedbackForm(request.POST)
-        if request.COOKIES['last_login']:
-            context = {
+        context = {
             'form': form,
             'last_login': request.COOKIES['last_login'],
         }
-        else:
-            context = {
-                'form': form,
-            }
         return render(request, 'landingPage.html', context)
     else:
         return render(request, 'landingPage.html')

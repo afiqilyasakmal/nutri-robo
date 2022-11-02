@@ -69,6 +69,7 @@ color: #264655;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
+    background-color: rgb(251, 251, 251, 0.75);
 }
 
 #carouselLabel1:hover {
@@ -242,7 +243,7 @@ color: #264655;
         border-color: #264655;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
         transition: 0.3s;
-        font-size: xx-small;
+        font-size: x-small;
     }
     
     .navbarButton:hover {
@@ -290,12 +291,15 @@ color: #264655;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
+        font-size: x-small;
+        background-color: rgb(251, 251, 251, 0.75);
     }
     
     #carouselLabel1:hover {
         margin-bottom: -10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
         border-radius: 5px;
+        font-size: x-small;
         background-color: rgb(251, 251, 251, 0.75);
     }
     
@@ -425,6 +429,7 @@ color: #264655;
         transition: 0.3s;
         border-radius: 5px;
         font-size: x-small;
+        background-color: rgb(251, 251, 251, 0.75);
     }
     
     #carouselLabel1:hover {
@@ -544,6 +549,7 @@ color: #264655;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
     }
     
     #carouselLabel1:hover {
@@ -657,6 +663,7 @@ color: #264655;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
+        background-color: rgb(251, 251, 251, 0.75);
     }
     
     #carouselLabel1:hover {
