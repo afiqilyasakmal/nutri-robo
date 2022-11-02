@@ -13,7 +13,10 @@ import datetime
 # Create your views here.
 
 def show_landingPage(request):
-    return render(request, 'landingPage.html')
+    if request.user.is_authenticated:
+        return redirect('landingPage:show_afterLoginlandingPage')
+    else:
+        return render(request, 'landingPage.html')
 
 @login_required(login_url='/login/')
 def show_afterLoginlandingPage(request):
@@ -26,31 +29,38 @@ def show_afterLoginlandingPage(request):
     return render(request, 'afterLoginLandingPage.html', context)
 
 def register(request):
-    form = UserCreationForm()
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Account has been created successfully!')
-            return redirect('landingPage:login_user')
-    
-    context = {'form':form}
-    return render(request, 'register.html', context) 
+    if request.user.is_authenticated:
+        return redirect('landingPage:show_afterLoginlandingPage')
+    else:
+        form = UserCreationForm()
+        if request.method == "POST":
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Account has been created successfully!')
+                return redirect('landingPage:login_user')
+        
+        context = {'form':form}
+        return render(request, 'register.html', context) 
+
 
 def login_user(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage")) # membuat response
-            response.set_cookie('last_login', str(datetime.datetime.now()))
-            return response
-        else:
-            messages.info(request, 'Invalid username or password')
-    context = {}
-    return render(request, 'login.html', context)
+    if request.user.is_authenticated:
+        return redirect('landingPage:show_afterLoginlandingPage')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                response = HttpResponseRedirect(reverse("landingPage:show_afterLoginlandingPage")) # membuat response
+                response.set_cookie('last_login', str(datetime.datetime.now()))
+                return response
+            else:
+                messages.info(request, 'Invalid username or password')
+        context = {}
+        return render(request, 'login.html', context)
 
 def logout_user(request):
     logout(request)

@@ -285,14 +285,14 @@ color: #264655;
     }
     
     #carouselLabel1 {
-        margin-bottom: 0px;
+        margin-bottom: -10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
     }
     
     #carouselLabel1:hover {
-        margin-bottom: 0px;
+        margin-bottom: -10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
         border-radius: 5px;
         background-color: rgb(251, 251, 251, 0.75);
@@ -375,7 +375,7 @@ color: #264655;
         border-color: #264655;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
         transition: 0.3s;
-        font-size: medium;
+        font-size: small;
     }
     
     .navbarButton:hover {
@@ -419,17 +419,19 @@ color: #264655;
     }
     
     #carouselLabel1 {
-        margin-bottom: 35px;
+        margin-bottom: 5px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
+        font-size: x-small;
     }
     
     #carouselLabel1:hover {
-        margin-bottom: 35px;
+        margin-bottom: 5px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
         border-radius: 5px;
         background-color: rgb(251, 251, 251, 0.75);
+        font-size: x-small;
     }
     
     #carouselLabel2 {
@@ -498,6 +500,10 @@ color: #264655;
     margin-right: 30px;
     }
 
+    .navbarButton {
+        font-size: medium;
+    }
+
     .carousel {
         height: 300px;
         width: 600px;
@@ -533,14 +539,14 @@ color: #264655;
     
 
     #carouselLabel1 {
-        margin-bottom: 80px;
+        margin-bottom: 10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
     }
     
     #carouselLabel1:hover {
-        margin-bottom: 80px;
+        margin-bottom: 10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
         border-radius: 5px;
         background-color: rgb(251, 251, 251, 0.75);
@@ -646,14 +652,14 @@ color: #264655;
     }
     
     #carouselLabel1 {
-        margin-bottom: 180px;
+        margin-bottom: 120px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
     }
     
     #carouselLabel1:hover {
-        margin-bottom: 180px;
+        margin-bottom: 120px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
         border-radius: 5px;
         background-color: rgb(251, 251, 251, 0.75);

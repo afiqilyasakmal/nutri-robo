@@ -15,7 +15,9 @@
   <!-- Navigation Bar -->
   <nav class="navbar fixed-top" id ="navbar">
     <div class="container-fluid">
-      <img src="{% static '/images/logo.jpg' %}" alt="" id="logoImage">
+      <a href="{% url 'landingPage:show_afterLoginlandingPage' %}">
+        <img src="{% static '/images/logo.jpg' %}" alt="" id="logoImage">
+      </a>
       <span class = "modalButton">
         <button type="button" class="navbarButton">
           <a href="{% url 'landingPage:logout_user' %}" style="text-decoration: none; color: #264655;">
@@ -47,7 +49,7 @@
         <a href="{% url 'landingPage:show_afterLoginlandingPage' %}">
           <div class="carousel-caption" id ="carouselLabel1">
             <h5>HELLO NUTRI-ROBO!</h5>
-            <p>"Anindya Lokeswara"</p>
+            <p>"NUTRI-ROBO is a smart application that will help users to improve the quality of global public health by fulfilling the daily nutritional needs of users. It does not stop there, NUTRI-ROBO will also provide recommendations regarding exercise, sleep time, daily motivation, and feedback related to food and daily activities of the user in accordance with the personal data of each user."</p>
           </div>
         </a>
       </div>

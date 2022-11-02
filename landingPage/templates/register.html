@@ -13,7 +13,9 @@
     <!-- Navigation Bar -->
     <nav class="navbar fixed-top" id ="navbar">
         <div class="container-fluid">
-            <img src="{% static '/images/logo.jpg' %}" alt="" width="225" height="55"  id="logoImage">
+            <a href="{% url 'landingPage:show_landingPage' %}">
+                <img src="{% static '/images/logo.jpg' %}" alt="" id="logoImage">
+              </a>
             <span>
                 <button type="button" class="signOutButton">
                   <a href="{% url 'landingPage:show_landingPage' %}" style="text-decoration: none; color: #264655;">

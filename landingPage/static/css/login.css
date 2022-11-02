@@ -116,3 +116,25 @@ label {
     transform: translate(0, 10px);
     font-family: 'Futura', Arial, sans-serif;
 }
+
+@media (min-width: 300px) {
+    #logoImage {
+        width: 150px;
+        height: 35px;
+    }
+
+    .navbar button {
+        font-size: small;
+    }
+}
+
+@media (min-width: 500px) {
+    #logoImage {
+        width: 225px;
+        height: 55px;
+    }
+
+    .navbar button {
+        font-size: medium;
+    }
+}
