@@ -13,9 +13,9 @@
     <nav class="navbar fixed-top" id ="navbar">
         <div class="container-fluid">
           <a href="{% url 'landingPage:show_landingPage' %}">
-            <img src="{% static '/images/logo.jpg' %}" alt="" id="logoImage">
+            <img src="{% static '/images/logo.jpg' %}" style="width: 200px; height: 50px;" alt="" id="logoImage">
           </a>
-          <p id="date-info"></p>
+          <p id="date-info" style="font-family: 'Futura'; font-size: 18px; margin: 15px;"></p>
         </div>
       </nav>
     <div class="wrapper">
@@ -808,11 +808,6 @@
         font-weight: bolder;
     }
     
-    .navbar h7 {
-        font-family: 'Futura', Arial, sans-serif;
-        font-weight: lighter;
-    }
-    
     .titleLogo{
         transform: translate(-307px,0);
     }
@@ -850,11 +845,6 @@
         font-size: 2.1rem;
         margin: 20px auto;
         color: #264655;
-    }
-
-    #date-info {
-        font-size: 18px;
-        text-align: right;
     }
 
     .kartu {
@@ -904,11 +894,6 @@
         scroll-snap-align: 0;
         transition: all 0.3s;
         background-image: url(https://img.freepik.com/free-vector/cute-gird-background-minimal-pink-design-vector_53876-156576.jpg?w=996&t=st=1667224166~exp=1667224766~hmac=3442bd0cd1f81f87c14ee53b2eeaa1333bda4b3197319ed73c22616b7379f820);
-    }
-    
-    #logoImage {
-        width: 150px;
-        height: 35px;
     }
 
     .card:not(:last-child) {
