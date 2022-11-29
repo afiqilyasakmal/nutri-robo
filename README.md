@@ -2,7 +2,7 @@
 
 Repositori ini dibuat untuk memenuhi tugas Proyek Tengah Semester (PTS) mata kuliah Pemrograman Berbasis Platform yang diselenggarakan Fakultas Ilmu Komputer, Universitas Indonesia Semester Ganjil 2022/2023 Kelompok A-08.
 
-Tautan aplikasi Heroku: https://nutrirobo.herokuapp.com/
+Tautan aplikasi (via Railway): https://nutrirobo.up.railway.app/
 
 ## Anggota Kelompok
 
