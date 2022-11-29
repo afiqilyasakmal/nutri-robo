@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: python manage.py migrate && gunicorn project_django.wsgi
+web: python manage.py migrate && gunicorn nutrirobo.wsgi
