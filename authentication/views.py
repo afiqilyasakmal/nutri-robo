@@ -4,6 +4,12 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
+from nutri-robo.landingPage.models import FeedbackItem
+from nutri-robo.landingPage.forms import FeedbackForm
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.core import serializers
 
 @csrf_exempt
 def login(request):
@@ -56,4 +62,9 @@ def logout_user(request):
 		"status": True,
 		"message": "Logged out!"
 	}, status = 200)
+
+@csrf_exempt
+def show_userFeedback(request):
+    data_feedback = FeedbackItem.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
 
