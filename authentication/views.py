@@ -50,7 +50,7 @@ def register(request):
         }, status = 400)
 
 @csrf_exempt
-def logout(request):
+def logout_user(request):
 	logout(request)
 	return JsonResponse({
 		"status": True,
