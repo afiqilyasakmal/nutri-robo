@@ -29,6 +29,7 @@ urlpatterns = [
     path('blog/', frontpage, name='frontpage'), # dari aplikasi core
     path('tracker/', include('tracker.urls')),
     path('target_profile/', include('target_profile.urls')),
+    path('auth/', include('authentication.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, documment_root=settings.STATIC_ROOT)
