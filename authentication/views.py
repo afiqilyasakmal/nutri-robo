@@ -4,8 +4,8 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
-from nutri-robo.landingPage.models import FeedbackItem
-from nutri-robo.landingPage.forms import FeedbackForm
+from landingPage.models import FeedbackItem
+from landingPage.forms import FeedbackForm
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
