@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
+import json
 
 @csrf_exempt
 def login(request):
@@ -33,21 +34,21 @@ def login(request):
 
 @csrf_exempt
 def register(request):
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-        form.save()
-        return JsonResponse(
-        {
-            "status": True,
-            "message": "Registration success!",
-        }, status = 200)
-    else:
-        return JsonResponse(
-        {
-            "status": False,
-            "message": "Registration failed!",
-            "details": form.errors
-        }, status = 400)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data['username']
+        password1 = data['password1']
+        password2 = data['password2']
+		
+        try:
+            form = UserCreationForm(username, password1, password2)
+            form.save()
+            return JsonResponse({"instance": "Registration success!"}, status=200)
+        except:
+            return JsonResponse({"instance": "Registration failed!"}, status=400)
+
+    return JsonResponse({"instance": "Registration failed!"}, status=400)
+
 
 @csrf_exempt
 def logout_user(request):
