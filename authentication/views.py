@@ -57,11 +57,13 @@ def register(request):
 
 @csrf_exempt
 def logout_user(request):
-	logout(request)
-	return JsonResponse({
-		"status": True,
-		"message": "Logged out!"
-	}, status = 200)
+    logout(request)
+    response = HttpResponseRedirect(reverse("landingPage:show_landingPage"))
+    response.delete_cookie('last_login')
+    return JsonResponse({
+        "status": True,
+        "message": "Logged out!"
+    }, status = 200)
 
 @csrf_exempt
 def show_userFeedback(request):
