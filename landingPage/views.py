@@ -75,7 +75,6 @@ def delete_feedback(request, pk):
     response = HttpResponseRedirect(reverse("landingPage:show_landingPage"))
     return response
 
-@login_required(login_url='/login/')
 def show_userFeedback_json(request):
     data_feedback = FeedbackItem.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
