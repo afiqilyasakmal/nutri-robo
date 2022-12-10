@@ -5,10 +5,13 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.core import serializers
 
 
 from . import forms as frm, models as mdl
 from .helpers import InsertOrUpdateMixin
+from target_profile.models import PhysicalInfo
 
 # Create your views here.
 class CreateProfile(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -66,6 +69,28 @@ class UserProfile(LoginRequiredMixin, TemplateView):
             target = target
         )
         return self.render_to_response(context)
+
+    # buat fungsi show todolist in json
+
+    def show_profile_in_json(request): 
+        username = request.user.username
+        profile_user = mdl.Profile.objects.filter(user = request.user)
+        # context = {
+        #     'tasks_list': profile_user,
+        #     'username': username
+        # }
+        return HttpResponse(serializers.serialize("json", profile_user), content_type="application/json")
+
+        
+    def show_target_in_json(request): 
+        username = request.user.username
+        target_user = mdl.PhysicalInfo.objects.filter(user = request.user)
+        # context = {
+        #     'tasks_list': profile_user,
+        #     'username': username
+        # }
+        return HttpResponse(serializers.serialize("json", target_user), content_type="application/json")
+
 
 class CreateOrUpdateProfile(LoginRequiredMixin, SuccessMessageMixin, InsertOrUpdateMixin):
     model = mdl.Profile
@@ -153,3 +178,8 @@ class CreateOrUpdatePhysicalInfo(LoginRequiredMixin, SuccessMessageMixin, Create
             'err_msg': form.errors
         }
         return JsonResponse(context, safe=False)
+
+    def show_json(request):
+        item = PhysicalInfo.objects.all()
+        return HttpResponse(serializers.serialize("json", item), content_type="application/json")
+
