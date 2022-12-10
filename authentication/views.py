@@ -69,4 +69,5 @@ def logout_user(request):
 def show_userFeedback(request):
     data_feedback = FeedbackItem.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
+    
 
