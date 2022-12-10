@@ -15,6 +15,6 @@ urlpatterns = [
     path('accounts/detail/target/json/', UserProfile.show_target_in_json, name='show_target_in_json'),
 
     path('flutter/profile/<str:username>', profile_flutter, name="flutter-profile"),
-    path('flutter/profile/<str:username>', target_flutter, name="flutter-profile"),
+    path('flutter/target/<str:username>', target_flutter, name="flutter-target"),
     path('flutter/edit-profile', edit_profile_flutter, name="flutter-edit-profile"),
 ]
