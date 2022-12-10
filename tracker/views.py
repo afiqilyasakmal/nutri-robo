@@ -30,10 +30,10 @@ def show_tracker(request):
 @csrf_exempt
 def add_calorie(request):
 	if request.method == "POST":
-		calorie = request.REQUEST.get("calorie")
-		description = request.REQUEST.get("description")
-		date= request.REQUEST.get("date")
-		time= request.REQUEST.get("time")
+		calorie = request.POST.get("calorie")
+		description = request.POST.get("description")
+		date= request.POST.get("date")
+		time= request.POST.get("time")
 		CalorieTracker.objects.create(time=time, date=date, calorie=calorie, description=description, user=request.user)
 		return HttpResponse()
 	else:
