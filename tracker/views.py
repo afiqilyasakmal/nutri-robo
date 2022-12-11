@@ -80,19 +80,19 @@ def add_sleep(request):
         return redirect('tracker:show_tracker')
 
 def show_calorie_json(request):
-    calorie_item = CalorieTracker.objects.filter(pk=id)
+    calorie_item = CalorieTracker.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", calorie_item), content_type="application/json")
 
 def show_water_json(request):
-    water_item = WaterTracker.objects.filter(pk=id)
+    water_item = WaterTracker.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", water_item), content_type="application/json")
 
 def show_exercise_json(request):
-    exercise_item = ExerciseTracker.objects.filter(pk=id)
+    exercise_item = ExerciseTracker.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", exercise_item), content_type="application/json")
 
 def show_sleep_json(request):
-    sleep_item = SleepTracker.objects.filter(pk=id)
+    sleep_item = SleepTracker.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", sleep_item), content_type="application/json")
 
 def delete_calorie(request, id):
