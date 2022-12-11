@@ -5,6 +5,9 @@ from .models import Comment
 from .forms import CommentForm
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.core import serializers
+
 
 
 # Create your views here.
@@ -31,3 +34,7 @@ def detail(request, slug):
         form = CommentForm()
 
     return render(request, 'blog/detail.html', {'post': post, 'form': form, 'comments': comments, 'last_login': request.user.last_login.strftime('%m/%d/%Y, %H:%M:%S')})
+
+def show_post_json(request):
+    post = Post.objects.all()
+    return HttpResponse(serializers.serialize("json", post), content_type="application/json")
