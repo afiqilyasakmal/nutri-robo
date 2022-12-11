@@ -86,6 +86,16 @@ def add_feedback(request): ####
             }, status = 400)
 
 @csrf_exempt
+def delete_feedback(request, pk):
+    data = FeedbackItem.objects.get(id=pk)
+    data.delete()
+    return JsonResponse(
+        {
+            "status": True,
+            "message": "Feedback successfully deleted!",
+        }, status = 200)
+
+@csrf_exempt
 def show_userFeedback(request):
     data_feedback = FeedbackItem.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
