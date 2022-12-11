@@ -10,6 +10,8 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.core import serializers
+from django.contrib.auth.models import User
+from time import sleep
 
 @csrf_exempt
 def login(request):
@@ -96,8 +98,13 @@ def delete_feedback(request, pk):
         }, status = 200)
 
 @csrf_exempt
-def show_userFeedback(request):
-    data_feedback = FeedbackItem.objects.filter(user = request.user)
-    return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
+def show_userFeedback(request, username):
+    user = User.objects.get(username = username)
+    sleep(0)
+    if user is not None:
+        data_feedback = FeedbackItem.objects.filter(user = user)
+        return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
+    else:
+        return JsonResponse({}, status=404)
     
 
