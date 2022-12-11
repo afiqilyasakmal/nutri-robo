@@ -9,6 +9,7 @@ from django.urls import reverse
 from .forms import FeedbackForm
 from landingPage.models import FeedbackItem
 import datetime
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -82,3 +83,7 @@ def show_userFeedback_json(request):
 def show_allFeedback_json(request):
     data_feedback = FeedbackItem.objects.all()
     return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
+
+def show_user_json(request):
+    data_user = User.objects.all()
+    return HttpResponse(serializers.serialize("json", data_user), content_type="application/json")
