@@ -66,6 +66,26 @@ def logout_user(request):
     }, status = 200)
 
 @csrf_exempt
+def add_feedback(request): ####    
+    form = FeedbackForm(request.POST)
+    if form.is_valid():
+        feedback = form.save(commit=False)
+        feedback.user = request.user
+        feedback.save()
+        return JsonResponse(
+        {
+            "status": True,
+            "message": "Feedback successfully added!",
+        }, status = 200)
+    else:
+        return JsonResponse(
+            {
+                "status": False,
+                "message": "Failed to add feedback!",
+                "details": form.errors
+            }, status = 400)
+
+@csrf_exempt
 def show_userFeedback(request):
     data_feedback = FeedbackItem.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data_feedback), content_type="application/json")
