@@ -7,7 +7,7 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('register/', register, name='register'),
     path('logout/', logout_user, name='logout_user'),
-    path('userfeedback/', show_userFeedback, name='show_userFeedback'),
+    path('userfeedback/<str:username>', show_userFeedback, name='show_userFeedback'),
     path('addfeedback/', add_feedback, name='add_feedback'),
     path('deletefeedback/', delete_feedback, name='delete_feedback'),
 ]
