@@ -14,6 +14,12 @@ from tracker.views import show_sleep_json
 from tracker.views import delete_sleep
 from tracker.views import deleteCalorief
 from tracker.views import calorief
+from tracker.views import deleteExercisef
+from tracker.views import exercisef
+from tracker.views import deleteWaterf
+from tracker.views import waterf
+from tracker.views import deleteSleepf
+from tracker.views import sleepf
 
 app_name = 'tracker'  
 
@@ -33,4 +39,10 @@ urlpatterns = [
     path('delete-sleep/<int:id>', delete_sleep, name='delete_sleep'),
     path('delete-calorief/', deleteCalorief, name='deleteCalorief'),
     path('calorief/', calorief, name='calorief'),
+    path('delete-exercisef/', deleteExercisef, name='deleteExercisef'),
+    path('exercisef/', exercisef, name='exercisef'),
+    path('delete-waterf/', deleteWaterf, name='deleteWaterf'),
+    path('waterf/', waterf, name='waterf'),
+    path('delete-sleepf/', deleteSleepf, name='deleteSleepf'),
+    path('sleepf/', sleepf, name='sleepf'),
 ]
