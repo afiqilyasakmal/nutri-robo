@@ -133,3 +133,61 @@ def deleteCalorief(request):
         id = request.POST.get('id')
         CalorieTracker.objects.get(pk=int(id)).delete()
         return JsonResponse({'status': 'berhasil ditutup'}, status=200)
+
+@csrf_exempt
+def waterf(request):
+	if (request.method == 'POST'):
+		water = int(request.POST.get("water")) 
+		description = request.POST.get("description")
+		date = request.POST.get("date")
+		time = request.POST.get("time")
+		user = request.user
+		new_water = WaterTracker(user=user, water=water, description=description, time=time, date=date)
+		new_water.save()
+		return JsonResponse({'status': 'berhasil dibuka'}, status=200)
+
+@csrf_exempt
+def deleteWaterf(request):
+    if (request.method == 'POST'):
+        id = request.POST.get('id')
+        WaterTracker.objects.get(pk=int(id)).delete()
+        return JsonResponse({'status': 'berhasil ditutup'}, status=200)
+
+@csrf_exempt
+def exercisef(request):
+	if (request.method == 'POST'):
+		exercise = int(request.POST.get("exercise")) 
+		description = request.POST.get("description")
+		date = request.POST.get("date")
+		time = request.POST.get("time")
+		user = request.user
+		new_exercise = ExerciseTracker(user=user, exercise=exercise, description=description, time=time, date=date)
+		new_exercise.save()
+		return JsonResponse({'status': 'berhasil dibuka'}, status=200)
+
+@csrf_exempt
+def deleteExercisef(request):
+    if (request.method == 'POST'):
+        id = request.POST.get('id')
+        ExerciseTracker.objects.get(pk=int(id)).delete()
+        return JsonResponse({'status': 'berhasil ditutup'}, status=200)
+
+@csrf_exempt
+def sleepf(request):
+	if (request.method == 'POST'):
+		sleephours = int(request.POST.get("sleephours")) 
+		sleepminutes = int(request.POST.get("sleepminutes")) 
+		description = request.POST.get("description")
+		date = request.POST.get("date")
+		time = request.POST.get("time")
+		user = request.user
+		new_sleep = SleepTracker(user=user, sleephours=sleephours, sleepminutes=sleepminutes, description=description, time=time, date=date)
+		new_sleep.save()
+		return JsonResponse({'status': 'berhasil dibuka'}, status=200)
+
+@csrf_exempt
+def deleteSleepf(request):
+    if (request.method == 'POST'):
+        id = request.POST.get('id')
+        SleepTracker.objects.get(pk=int(id)).delete()
+        return JsonResponse({'status': 'berhasil ditutup'}, status=200)
