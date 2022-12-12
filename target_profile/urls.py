@@ -20,6 +20,6 @@ urlpatterns = [
     # path('flutter/coru-target', coru_target_flutter, name="flutter-coru-target"),
     path('flutter/profile/<str:username>', show_user_profile, name="show_user_profile"),
     path('flutter/target/<str:username>', show_user_target, name="show_user_target"),
-    path('flutter/update/profile/<str:username>', update_profile, name="update_profile"),
-    path('flutter/update/target/<str:username>', update_target, name="update_target")
+    path('flutter/update/profile/', update_profile, name="update_profile"),
+    path('flutter/update/target/', update_target, name="update_target")
 ]
