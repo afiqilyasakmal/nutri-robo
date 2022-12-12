@@ -72,24 +72,24 @@ class UserProfile(LoginRequiredMixin, TemplateView):
 
     # buat fungsi show todolist in json
 
-    def show_profile_in_json(request): 
-        username = request.user.username
-        profile_user = mdl.Profile.objects.filter(user = request.user)
-        # context = {
-        #     'tasks_list': profile_user,
-        #     'username': username
-        # }
-        return HttpResponse(serializers.serialize("json", profile_user), content_type="application/json")
+    # def show_profile_in_json(request): 
+    #     username = request.user.username
+    #     profile_user = mdl.Profile.objects.filter(user = request.user)
+    #     # context = {
+    #     #     'tasks_list': profile_user,
+    #     #     'username': username
+    #     # }
+    #     return HttpResponse(serializers.serialize("json", profile_user), content_type="application/json")
 
         
-    def show_target_in_json(request): 
-        username = request.user.username
-        target_user = mdl.PhysicalInfo.objects.filter(user = request.user)
-        # context = {
-        #     'tasks_list': profile_user,
-        #     'username': username
-        # }
-        return HttpResponse(serializers.serialize("json", target_user), content_type="application/json")
+    # def show_target_in_json(request): 
+    #     username = request.user.username
+    #     target_user = mdl.PhysicalInfo.objects.filter(user = request.user)
+    #     # context = {
+    #     #     'tasks_list': profile_user,
+    #     #     'username': username
+    #     # }
+    #     return HttpResponse(serializers.serialize("json", target_user), content_type="application/json")
 
 
 class CreateOrUpdateProfile(LoginRequiredMixin, SuccessMessageMixin, InsertOrUpdateMixin):
@@ -182,4 +182,5 @@ class CreateOrUpdatePhysicalInfo(LoginRequiredMixin, SuccessMessageMixin, Create
     def show_json(request):
         item = PhysicalInfo.objects.all()
         return HttpResponse(serializers.serialize("json", item), content_type="application/json")
+
 
