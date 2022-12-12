@@ -4,7 +4,7 @@ from tracker.models import WaterTracker
 from tracker.models import ExerciseTracker
 from django.shortcuts import redirect
 import datetime
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
@@ -114,3 +114,22 @@ def delete_sleep(request, id):
 	sleep_item = SleepTracker.objects.filter(pk = id)
 	sleep_item.delete()
 	return redirect('tracker:show_tracker')
+
+@csrf_exempt
+def calorief(request):
+	if (request.method == 'POST'):
+		calorie = int(request.POST.get("calorie")) 
+		description = request.POST.get("description")
+		date = request.POST.get("date")
+		time = request.POST.get("time")
+		user = request.user
+		new_calorie = CalorieTracker(user=user, calorie=calorie, description=description, time=time, date=date)
+		new_calorie.save()
+		return JsonResponse({'status': 'berhasil dibuka'}, status=200)
+
+@csrf_exempt
+def deleteCalorief(request):
+    if (request.method == 'POST'):
+        id = request.POST.get('id')
+        CalorieTracker.objects.get(pk=int(id)).delete()
+        return JsonResponse({'status': 'berhasil ditutup'}, status=200)
